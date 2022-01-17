@@ -1,3 +1,7 @@
+<?php
+if($_SESSION["autorisation"]=="OK" )
+{
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,13 +11,18 @@
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
+		<div>
 		<ul>
 			<li><a href="/index.php">Accueil</a></li>
-			<li><a href="/index.php?action=logout">Déconnexion</a></li>
+			<li><a href="index.php?uc=user&choix=deconnexion">Déconnexion</a></li>
 		</ul>
+        </div>
 		<div id="clickblock">
-			<a onclick="autoCorrect(this); return false;">Il y a des fotes dan sete fraz. Cliké ici pour lé corrigés.</a>
+			<button onclick="autoCorrect(this); return false;">Il y a des fotes dan sete fraz. Cliké ici pour lé corrigés.</button>
 		</div>
+		<?php
+}
+?>
 	</body>
 </html>
 
