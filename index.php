@@ -3,6 +3,7 @@ session_start() ;
 include "controleurs/fonction.php" ;
 include "modeles/User.class.php";
 include "modeles/monPdo.php" ;
+include "vues/header.php" ;
 include "controleurs/controleurUser.php" ;
 /*******************************************************************************
 Le sujet est assez basique :
@@ -39,7 +40,7 @@ if(empty($_GET["uc"])){
     }
     //sinon, je récupère le user-case
     else{
-        $uc=$_GET["uc"] ;
+        $uc=$_GET["liste"] ;
     }
 
 switch ($uc) {
@@ -47,13 +48,25 @@ switch ($uc) {
         include "vues/accueil.php" ;
         break ;*/
             
-case "login":
+    case "login":
         include("vues/login.php");
         break ;
 
     case "user":
         include("controleurs/controleurUser.php") ;
         break ;
+    
+    case "liste" :
+        $lesResultats=User::afficherUser($user);
+        include("vues/v_user/main.php") ;
+        break ;
+
+    case "userco":
+        $User=User::derniereConnexion($id_user, $last_login, $username);
+        include("vues/v_user/main.php") ;
+        break ;
     }
+
+    include "vues/footer.php" ;
 
 ?>

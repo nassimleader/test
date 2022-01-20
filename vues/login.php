@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Test GLI</title>
-		<script type="text/javascript" src="script.js"></script>
-	</head>
-	<body>
-		<div class="container-sm w-25 mt-5 px-4">
+<div class="centrage">
+		<div class="centrage container-sm w-25 mt-5 px-4">
 			<h1>Identification</h1>
 			<form method="POST"  action="index.php?action=user&choix=verif">
 			<div class="form-group">
@@ -24,10 +17,5 @@
 </div>
 				<input type="submit" class="btn btn-primary" id="submit" value="Connexion" />
 			</form>
-			<div class="alert alert-warning mt-1" role="alert">
-				{{ errors }}
-			</div>
 		</div>
-	</body>
-</html>
-
+</div>

@@ -5,13 +5,19 @@ $choix=$_GET["choix"] ;
 
 switch($choix)
 {
+    case "login":
+        include("vues/login.php");
+        break ;
+
     case "verif" :
         $rep=User::verifier(securiser($_POST["username"]), ($_POST["password"])) ;
     
         if($rep==true){
             $_SESSION["autorisation"]="OK" ;
             $_SESSION["username"]=$_POST["username"];
-            include("vues/main.php") ;
+            //$_SESSION["id_groupe"]=$_POST["id_groupe"]; , ($_POST["id_groupe"])
+            include("vues/v_user/main.php") ;
+            //include('modeles/User.class.php');
             }
         else
             {
