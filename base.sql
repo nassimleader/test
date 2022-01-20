@@ -1,3 +1,5 @@
+/* CREATE DATABASE test ; */
+
 CREATE TABLE `group` (
   `id_group` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
@@ -16,6 +18,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 INSERT INTO `user` VALUES (1,'test','test','2020-09-28 12:00:00');
+/* ALTER TABLE  `user` ADD  `lastlogin` DATETIME NOT NULL; */
 
 
 CREATE TABLE `user_group` (
